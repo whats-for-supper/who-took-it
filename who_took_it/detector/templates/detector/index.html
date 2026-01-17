@@ -32,7 +32,21 @@
         <audio id="alert-sound" src="{% static 'detector/assets/alarm.mp3' %}" preload="auto"></audio>
 
         <div id="alert-overlay" class="alert-overlay hidden">
-            <div class="alert-box">THIEF ALERT THIEF ALERT</div>
+            <div class="alert-modal" role="dialog" aria-modal="true" aria-labelledby="alert-title">
+                <button class="alert-close" type="button" aria-label="Close" onclick="stopAlert()">×</button>
+
+                <div class="alert-header">
+                    <div class="alert-icon">!</div>
+                    <div class="alert-title" id="alert-title">INTRUDER!</div>
+                    <div class="alert-subtitle">
+                        THIEF ALERT THIEF ALERT
+                    </div>
+                </div>
+
+                <div class="alert-body">
+                    <div class="alert-message">We know this isn't your first time smh.</div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
