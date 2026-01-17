@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const record = document.querySelector("#record-dot");
 
   // constants
+  const SCALE = 0.75;
+
   let isDetecting = false;
   let watchInterval = null;
 
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Later send frameBlob to Django / ML
         analyseFrame(frameBlob);
       });
-    }, 2000);
+    }, 500);
 
   }
 
@@ -86,12 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     const context = canvas.getContext("2d");
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    context.drawImage(video, 0, 0, canvas.width * SCALE, canvas.height * SCALE);
 
     return new Promise((resolve) => {
       canvas.toBlob((blob) => {
         resolve(blob);
-      }, "image/jpeg", 0.85);
+      }, "image/jpeg", 0.7);
     });
   }
 
