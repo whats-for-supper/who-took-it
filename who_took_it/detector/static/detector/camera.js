@@ -6,9 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let isDetecting = false;
   let watchInterval = null;
 
-  // to change as per ML results
-  let isFamiliarPerson = true;
-
   // ensure camera is always running
   async function startCamera() {
     try {
@@ -99,14 +96,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // jaye's code
-  function analyseFrame(frameBlob) {
-    // InsightFace analysis goes here
-    console.log("Analysing frame...");
+  async function analyseFrame(frameBlob) {
+    const formData = new FormData();
+    formData.append("frame", frameBlob, "frame.jpg");
 
-    if (isFamiliarPerson) {
-      console.log("Familiar person detected!");
-      // trigger alert
-      triggerAlert();
+    try {
+      const res = await fetch("/api/facerec/", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) return;
+
+      const data = await res.json();
+      if (data.ok && data.alert) {
+        triggerAlert();
+      }
+    } catch (e) {
+      console.error(e);
     }
   }
 
