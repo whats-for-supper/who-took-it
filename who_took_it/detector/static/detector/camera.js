@@ -28,9 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleDetector() {
     if (!isDetecting) {
+      console.log("Starting detection");
       watchActivity();
       isDetecting = true;
     } else {
+      console.log("Stopping detection");
       stopWatching();
       isDetecting = false;
     }
@@ -41,11 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function watchActivity() {
     // check if existing interval
     if (watchInterval) {
+      console.log("Tick already running");
       return;
     }
 
     // collect frames every second
     watchInterval = setInterval(() => {
+      console.log("Capturing...");
       const framePromise = captureFrame();
       if (!framePromise) {
         return;
