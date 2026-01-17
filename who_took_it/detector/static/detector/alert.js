@@ -33,3 +33,11 @@ function triggerAlert() {
         alertIsRunning = false;
     });
 }
+
+function showAlert() {
+  document.getElementById("alert-overlay")?.classList.remove("hidden");
+}
+
+function stopAlert() {
+  document.getElementById("alert-overlay")?.classList.add("hidden");
+}
