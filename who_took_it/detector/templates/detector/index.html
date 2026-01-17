@@ -1,19 +1,14 @@
 {% extends "detector/layout.html" %}
 {% load static %}
 
-{% block title %}who-took-it | Webcam{% endblock %}
+{% block title %}
+    Detector
+{% endblock %}
 
 {% block body %}
     <div class="row justify-content-center">
-        <div class="row justify-content-center align-items-center">
+        <div class="align-items-center">
         <div class="camera-card">
-            <div class="camera-toolbar">
-                <div class="d-flex align-items-center" style="gap: 10px;">
-                    <button class="btn btn-primary btn-sm">Start detection</button>
-                    <button class="btn btn-outline-secondary btn-sm">Exit testing</button>
-                </div>
-            </div>
-
             <div class="camera-stage">
                 <video id="camera" autoplay playsinline muted></video>
             </div>
@@ -23,8 +18,14 @@
             </div>
         </div>
 
-        <div class="mt-3 text-center text-muted small">
-            Who took it! (MVP): show camera → detect → log incident.
+        <div class="text-center text-muted">
+            <h1>
+                One drink only!
+            </h1>
+        </div>
+
+        <div class="text-center text-muted medium">
+            Don't be greedy lah.
         </div>
         </div>
     </div>

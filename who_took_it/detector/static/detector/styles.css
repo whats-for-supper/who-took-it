@@ -3,33 +3,11 @@ body {
   background: #d2e4b9;
 }
 
-/* Top bar */
-.topbar {
-  background: #1f3a93;
-  color: #fff;
-  padding: 10px 0;
-}
-
-.topbar .brand {
-  font-weight: 700;
-  letter-spacing: 0.2px;
-}
-
-.topbar .nav-link {
-  color: rgba(255, 255, 255, 0.75);
-  padding: 0 12px;
-}
-
-.topbar .nav-link.active {
-  color: #fff;
-  font-weight: 600;
-}
-
 /* Camera card */
 #camera {
   width: 100%;
   height: 100%;
-  max-height: 520px;
+  min-height: 620px;
   object-fit: cover;
   background: #111;
 }
@@ -41,19 +19,9 @@ body {
   overflow: hidden;
 }
 
-.camera-toolbar {
-  border-bottom: 1px solid #e9ecef;
-  padding: 10px 12px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .camera-stage {
   background: #111;
-  min-height: 460px;
+  min-height: 620px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,4 +48,19 @@ body {
   background: #e11d48;
   border: 7px solid #fff;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+h1 {
+  font-family: "enchanted-land", sans-serif;
+  font-size: 96px;
+  color: #613105;
+  margin-bottom: 20px;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "enchanted-land";
+  src: url("fonts/Enchanted\ Land.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
