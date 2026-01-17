@@ -1,0 +1,36 @@
+{% extends "detector/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Detector
+{% endblock %}
+
+{% block body %}
+    <div class="row justify-content-center">
+        <div class="align-items-center">
+        <div class="camera-card">
+            <div class="camera-stage">
+                <video id="camera" autoplay playsinline muted></video>
+            </div>
+
+            <div class="record-wrap">
+                <div class="record-dot" title="Record / Capture"></div>
+            </div>
+        </div>
+
+        <div class="text-center text-muted">
+            <h1>
+                One drink only!
+            </h1>
+        </div>
+
+        <div class="text-center text-muted medium">
+            Don't be greedy lah.
+        </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'detector/camera.js' %}"></script>
+{% endblock %}
