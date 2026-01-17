@@ -1,0 +1,6 @@
+@who_took_it_backend_HostAddress = http://localhost:5092
+
+GET {{who_took_it_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

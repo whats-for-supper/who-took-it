@@ -1,10 +1,1 @@
-# Python
-__pycache__/
-*.py[cod]
-
-# Django
-db.sqlite3
-.env
-
-# Mac
-.DS_Store
+appsettings.Development.json
