@@ -15,14 +15,14 @@ function triggerAlert() {
 
   // volume gradually increases
   alertLoopCount = 0;
-  alertSound.volume = 0.2; // 0.0 to 1.0
+  alertSound.volume = 0.5; // 0.0 to 1.0
   alertSound.currentTime = 0;
 
   alertSound.loop = false;
   // increase volume each loop (cap at 1.0)
   alertSound.onended = () => {
     alertLoopCount += 1;
-    const nextVol = Math.min(1.0, 0.2 + alertLoopCount * 0.15);
+    const nextVol = Math.min(1.0, 0.5 + alertLoopCount * 0.15);
     alertSound.volume = nextVol;
 
     alertSound.currentTime = 0;
